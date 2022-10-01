@@ -1,12 +1,9 @@
 def countingSort(arr):
-    count_arr = []
+    count_arr = [0]*100
+
     for i in range(len(arr)):
 
-        count_arr.append(0)
-
-    for i in arr:
-
-        count_arr[i] = count_arr[i] + 1
+        count_arr[arr[i]] = count_arr[arr[i]] + 1
 
     print(*count_arr)
 
