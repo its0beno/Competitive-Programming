@@ -1,10 +1,11 @@
 
 
 stack = []
-tokens = ["2", "1", "+", "3", "*"]
+tokens = ["4", "13", "5", "/", "+"]
 for i in tokens:
     if i not in ["+", "-", "*", "/"]:
         stack.append(int(i))
+        print(stack)
     else:
         right = stack.pop()
         left = stack.pop()
@@ -13,12 +14,13 @@ for i in tokens:
             stack.append(right * left)
 
         elif i == '+':
-            stack.append(right + left)
+            stack.append(left + right)
 
         elif i == '-':
-            stack.append(right - left)
+            stack.append(left - right)
 
         elif i == '/':
-            stack.append(int(right / left))
+            stack.append(int(left/right))
+            print(stack)
 
 print(stack.pop())
